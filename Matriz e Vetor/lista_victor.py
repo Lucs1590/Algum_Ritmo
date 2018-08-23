@@ -85,7 +85,6 @@ while True:
 		atual = raw_input("Digite o vertice inicial: ")
 		print '\n'
 		visitados = []
-
 		vizinhos = verticesAdj(grafo, int(atual))
 			
 		while vizinhos != '[]':
@@ -98,6 +97,11 @@ while True:
 			if vizinhos[0] not in visitados:
 				atual = vizinhos[0]
 				# Fazer a parte de cima virar uma função de verificação de grafos atuais e vizinhos e jogar o [0] de vizinhos virar index dentro do for
+			elif len(vizinhos) >= 2:
+				if int(vizinhos[1]) not in visitados:
+					atual = int(vizinhos[1])
+				else:
+					pass
 			else:
 				print '-- FINALIZADO --'
 				break
