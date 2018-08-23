@@ -25,7 +25,7 @@ def insereAresta(lis):
 
     imprimeLista(lis)
 
-def verticesAdj(lis,vertice):	
+def verticesAdj(lis,vertice):
 	adj=[]
 	for i in range(1,len(lis[vertice])):
 		adj.append(lis[vertice][i])
@@ -52,7 +52,8 @@ menu['3']="Visualiza Lista"
 menu['4']="Vertices Adjacentes"
 menu['5']="Existe Aresta Entre"
 menu['6']="Grau do Vertice"
-menu['7']="Sair"
+menu['7']="Busca em Largura"
+menu['8']="Sair"
 grafo = []
 while True: 
 	options=menu.keys()
@@ -61,6 +62,7 @@ while True:
 	for entry in options:
 		print entry, menu[entry]
 	selection=raw_input("Selecione a opção:")
+	print '\n'
 	if selection =='1':
 		grafo = geraLista()
 	elif selection == '2':
@@ -80,6 +82,19 @@ while True:
 		vertice = raw_input("Informe o vertice:")
 		print 'Grau do vertice ',vertice,':',grauVertice(grafo,int(vertice))
 	elif selection == '7':
+		valor_inicio = raw_input("Digite o vertice inicial: ")
+
+		visitados = []
+		vizinhos = verticesAdj(grafo, int(valor_inicio))
+		if vizinhos != '[]':
+			# Logica aqui dentro
+			# opção de verificar se é conexo ou não
+            # verificar os vizinhos e correr dentro deles printando os vizinhos, atual e corridos
+			pass
+		
+		else:
+			print 'Não há grafos adjacentes ao vertice ', valor_inicio
+	elif selection == '8':
 		break
 	else:
 		print "Opção selecionada INVÁLIDA!" 
