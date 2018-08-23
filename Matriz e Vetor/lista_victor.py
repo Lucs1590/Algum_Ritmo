@@ -82,18 +82,22 @@ while True:
 		vertice = raw_input("Informe o vertice:")
 		print 'Grau do vertice ',vertice,':',grauVertice(grafo,int(vertice))
 	elif selection == '7':
-		valor_inicio = raw_input("Digite o vertice inicial: ")
+		atual = raw_input("Digite o vertice inicial: ")
 
 		visitados = []
-		vizinhos = verticesAdj(grafo, int(valor_inicio))
-		if vizinhos != '[]':
-			# Logica aqui dentro
-			# opção de verificar se é conexo ou não
-            # verificar os vizinhos e correr dentro deles printando os vizinhos, atual e corridos
-			pass
-		
-		else:
-			print 'Não há grafos adjacentes ao vertice ', valor_inicio
+		vizinhos = verticesAdj(grafo, int(atual))
+
+		while vizinhos != '[]':
+			visitados.append(atual)
+			print 'vertice atual: ',atual
+			print 'vertices vizinhos: ', vizinhos
+			print 'visitados: ', visitados
+			if vizinhos[0] not in visitados:
+				atual = vizinhos[0]
+				# Fazer a parte de cima virar uma função de verificação de grafos atuais e vizinhos e jogar o [0] de vizinhos virar index dentro do for
+
+		print 'Não há grafos adjacentes ao vertice ', atual, ' que não tenha sido visitado'
+
 	elif selection == '8':
 		break
 	else:
