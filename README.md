@@ -6,5 +6,5 @@ Esse repositório tem a finalidade de armazenar e compartilhar todos os projetos
 
 ## Índice
 
- 1. [Aula 1] (https://github.com/Lucs1590/Algum_Ritmo/commit/45cb6f3664b5c8c0e54b39c2ceb3cad96ebf0a02) - Aula relacionada a criação de matrizes e vetores;
+ 1. [Aula 1](https://github.com/Lucs1590/Algum_Ritmo/commit/45cb6f3664b5c8c0e54b39c2ceb3cad96ebf0a02) - Aula relacionada a criação de matrizes e vetores;
  2. [Aula 2]() - Aula relacionada a criação de busca em largura;
