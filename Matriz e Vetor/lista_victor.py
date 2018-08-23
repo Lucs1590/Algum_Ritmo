@@ -45,6 +45,34 @@ def grauVertice(lis,vertice):
 	else:
 		return len(verticesAdj(lis,vertice))
 
+def buscaLargura(atual):
+	print '\n'
+	visitados = []
+	try:
+		vizinhos = verticesAdj(grafo, int(atual))
+				
+		while vizinhos != '[]':
+			vizinhos = verticesAdj(grafo, int(atual))
+			visitados.append(int(atual))
+			print 'vertice atual: ',atual
+			print 'vertices vizinhos: ', vizinhos
+			print 'visitados: ', visitados
+			print '\n'
+			if vizinhos[0] not in visitados:
+				atual = vizinhos[0]
+
+			elif len(vizinhos) >= 2:
+				if int(vizinhos[1]) not in visitados:
+					atual = int(vizinhos[1])
+				else:
+					pass
+			else:
+				print '-- FINALIZADO --'
+				break
+		print 'Não há grafos adjacentes ao vertice ', atual, ' que não tenha sido visitado'
+	except:
+		print 'Não há um grafo convexo criado ou vertices adjacentes'
+
 menu = {}
 menu['1']="Criar Lista" 
 menu['2']="Insere Aresta"
@@ -83,30 +111,7 @@ while True:
 		print 'Grau do vertice ',vertice,':',grauVertice(grafo,int(vertice))
 	elif selection == '7':
 		atual = raw_input("Digite o vertice inicial: ")
-		print '\n'
-		visitados = []
-		vizinhos = verticesAdj(grafo, int(atual))
-			
-		while vizinhos != '[]':
-			vizinhos = verticesAdj(grafo, int(atual))
-			visitados.append(int(atual))
-			print 'vertice atual: ',atual
-			print 'vertices vizinhos: ', vizinhos
-			print 'visitados: ', visitados
-			print '\n'
-			if vizinhos[0] not in visitados:
-				atual = vizinhos[0]
-				# Fazer a parte de cima virar uma função de verificação de grafos atuais e vizinhos e jogar o [0] de vizinhos virar index dentro do for
-			elif len(vizinhos) >= 2:
-				if int(vizinhos[1]) not in visitados:
-					atual = int(vizinhos[1])
-				else:
-					pass
-			else:
-				print '-- FINALIZADO --'
-				break
-		print 'Não há grafos adjacentes ao vertice ', atual, ' que não tenha sido visitado'
-
+		buscaLargura(atual)
 	elif selection == '8':
 		break
 	else:
