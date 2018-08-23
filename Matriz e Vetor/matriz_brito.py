@@ -52,10 +52,8 @@ def existeAresta_matriz(func, aresta):
     valor = func[(v1-1)][v2-1]
     if valor == 1:
         print ('Há uma aresta entre ' , v1 , ' e ' , v2)
-        return True
     else:
         print('Não há aresta entre os vertices ' , v1 , ' e ' , v2)
-        return False
 
 def grauVertice(func, vertice):
     valor = func[(vertice-1)]
