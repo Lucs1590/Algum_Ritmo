@@ -48,30 +48,21 @@ def grauVertice(lis,vertice):
 def buscaLargura(atual):
 	print '\n'
 	visitados = []
-	try:
-		vizinhos = verticesAdj(grafo, int(atual))
-				
-		while vizinhos != '[]':
-			vizinhos = verticesAdj(grafo, int(atual))
-			visitados.append(int(atual))
-			print 'vertice atual: ',atual
-			print 'vertices vizinhos: ', vizinhos
-			print 'visitados: ', visitados
+	vizinhos = [atual]
+	while vizinhos != '[]':
+		try:
+			visitados.append(int(vizinhos[0]))
 			print '\n'
-			if vizinhos[0] not in visitados:
-				atual = vizinhos[0]
 
-			elif len(vizinhos) >= 2:
-				if int(vizinhos[1]) not in visitados:
-					atual = int(vizinhos[1])
-				else:
-					pass
-			else:
-				print '-- FINALIZADO --'
-				break
-		print 'Não há grafos adjacentes ao vertice ', atual, ' que não tenha sido visitado'
-	except:
-		print 'Não há um grafo convexo criado ou vertices adjacentes'
+			adj = verticesAdj(grafo,int(vizinhos.pop(0)))
+
+			for vertice in adj:
+				if vertice not in visitados and vertice not in vizinhos:
+					vizinhos.append(vertice)
+			print 'Visitados: ', visitados
+		except:
+			print '-- FINALIZADO --'
+			break
 
 menu = {}
 menu['1']="Criar Lista" 
