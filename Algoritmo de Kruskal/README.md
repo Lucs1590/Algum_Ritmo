@@ -1,5 +1,20 @@
-# Algoritmo de Kruskal
+# Trabalho - Algoritmo de Kruskal
 
+1. **Implementar os exercícios de busca em largura e busca em profundidade propostos na Aula 05.**
+
+[Resposta](https://github.com/Lucs1590/Algum_Ritmo/blob/master/Algoritmo%20de%20Kruskal/buscas.py)
+
+2. **Quais tipos de problemas podem ser resolvidos com busca em largura?Descreva e dê exemplos.**
+
+Resposta: 
+
+3. **Quais tipos de problemas podem ser resolvidos com busca em profundidade? Descreva e dê exemplos.**
+
+Resposta: 
+
+4. **Implementar o Algoritmo de Kruskal.**
+
+[Resposta](https://github.com/Lucs1590/Algum_Ritmo/blob/master/Algoritmo%20de%20Kruskal/algoritmo.py)
 ## Pré-requisitos
 Para esse exemplo funcionar é necessário um ambiente com Python 3.
 
