@@ -10,7 +10,7 @@ Resposta: A busca em largura trabalha com otimização de distancia, ou seja, el
 
 3. **Quais tipos de problemas podem ser resolvidos com busca em profundidade? Descreva e dê exemplos.**
 
-Resposta: Busca em profundidade trabalha percorrendo todas as arestas de um vértice antes de passar para outro vértice.
+Resposta: Busca em profundidade trabalha percorrendo todas as arestas de um vértice antes de passar para outro vértice. Esse algoritmo teve como motivação o exemplo prático de labirintosmas podemos pensar em um exemplo prático de quebra ca cabeças, em que para ir para outra peça, é melhor encontrar as duas adjacentes a essa. 
 
 4. **Implementar o Algoritmo de Kruskal.**
 
