@@ -6,11 +6,11 @@
 
 2. **Quais tipos de problemas podem ser resolvidos com busca em largura?Descreva e dê exemplos.**
 
-Resposta: 
+Resposta: A busca em largura trabalha com otimização de distancia, ou seja, ele resolve problemas para encontrar a menor distancia entre verticês. Usos relacionados a isso, temos quando trata-se de fazer menores rotas no GPS ou em sites como [The oracle of bacon](https://oracleofbacon.org), que buscam o menor caminho para duas variaveis.
 
 3. **Quais tipos de problemas podem ser resolvidos com busca em profundidade? Descreva e dê exemplos.**
 
-Resposta: 
+Resposta: Busca em profundidade trabalha percorrendo todas as arestas de um vértice antes de passar para outro vértice.
 
 4. **Implementar o Algoritmo de Kruskal.**
 
