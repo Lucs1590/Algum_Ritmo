@@ -45,6 +45,7 @@ def acharValorVertice_matriz(func, aresta):
     print (valor)
     return (valor)
 
+
 def existeAresta_matriz(func, aresta):
     v1 = aresta[0]
     v2 = aresta[1]
@@ -54,6 +55,7 @@ def existeAresta_matriz(func, aresta):
         print ('Há uma aresta entre ' , v1 , ' e ' , v2)
     else:
         print('Não há aresta entre os vertices ' , v1 , ' e ' , v2)
+
 
 def grauVertice(func, vertice):
     valor = func[(vertice-1)]
@@ -65,7 +67,8 @@ def grauVertice(func, vertice):
             adj.append(val_vertice)
         
         val_vertice += 1
-    print('Os vertices possui ', len(adj), ' graus')    
+    print('Os vertices possui ', len(adj), ' graus')
+
 # TESTES
 
 # GERAR MATRIZ

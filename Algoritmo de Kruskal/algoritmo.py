@@ -17,8 +17,8 @@ for i in arestas:
 
 ordem = sorted(valorKM) #KM em ordem crescente (200, 250,280,...)
 
-
 novaOrdem = []
+
 for ordem,arestas in product(ordem,arestas):
     if ordem in arestas: 
         novaOrdem.append(arestas) #Com isso ordeno as cidades pela distância em km
@@ -28,7 +28,7 @@ for i in novaOrdem:
     if i[0:1] not in arvore or i[1:2] not in arvore: #vejo se o valor não está na arvore
         arvore.append(i)                             #a ideia era colocar apenas valores não repetidos
     else:
-        print ('Valores repetidos ', i)
+        print ('Valores repetidos: ', i)
 
 #ele está tratando (BH,NQ) e (NQ,BH) como coisas diferentes
 print (arvore)
