@@ -1,5 +1,5 @@
 # Trabalho - Algoritmo de Kruskal
-
+[Documentação](https://drive.google.com/file/d/1Epp6t30X3jOrP1pSLMa6Q-NTA9xoyafB/view?usp=sharing)
 1. **Implementar os exercícios de busca em largura e busca em profundidade propostos na Aula 05.**
 
 [Resposta](https://github.com/Lucs1590/Algum_Ritmo/blob/master/Algoritmo%20de%20Kruskal/buscas.py)
