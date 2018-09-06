@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # -*- encoding: utf-8 -
 
 from itertools import product
@@ -32,4 +31,4 @@ for i in novaOrdem:
         print ('Valores repetidos ', i)
 
 #ele está tratando (BH,NQ) e (NQ,BH) como coisas diferentes
-print arvore
+print (arvore)

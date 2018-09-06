@@ -71,28 +71,129 @@ def buscaLargura(atual):
 			break
 
 
-def buscaProfundidade(grafo, atual):
+def alvaro(grafo, vertice):
+	adjascente = []
+	visitados = []
+	profundidadeReversa = []
+
+	adjascente.append(vertice)
+	visitados.append(vertice)
+	
+
+	while len(adjascente) or len(profundidadeReversa):
+		if len(adjascente) > 0:
+			print (len(adjascente))
+			print (adjascente)
+			print (visitados)
+			pop_adjacente = adjascente
+			busca = pop_adjacente.pop(0)
+			print ('BUSCA ' + str(busca))
+			vizinhos = verticesAdj(grafo, int(busca))
+			print ('VIZINHOS ' + str(vizinhos))
+			count = 0
+			print ('COUNT ' + str(count))
+			for j in vizinhos:
+				if j not in visitados and count < 1:
+					print ('olá1')
+					# count += 1
+					adjascente.append(j)
+					visitados.append(j)
+					# print('JOTINHA ' + str(j))
+				elif j in visitados:
+					profundidadeReversa.append(j)
+					print ('olá2')
+		else:
+			for i in reversed(visitados):
+				visitados.append(i)
+				if visitados.count('0') < 3:
+					print ('looooooop')
+					adjascente.append(visitados[0])
+			for i in profundidadeReversa:
+				count2 = 0
+				profundidadeReversa.pop(count2)
+				print ('LAUAOAPPIIIIII')
+
+
+def samuel(grafo, atual):
 	print ('\n')
 
 	visitados = []
-	ultimo = atual
+	# ultimo = atual
 	vizinhos = [atual]
+	j = 0
 
-	while vizinhos != '[]':
+	visitados.append(int(atual))
+	print (visitados)
+
+	while vizinhos != []:
 		try:
-			visitados.append(int(vizinhos[0]))
+			vizinhos = verticesAdj(grafo, int(visitados[j]))
+			print (vizinhos)
+			print ('ok')
 
-			adj = verticesAdj(grafo, int(vizinhos.pop(0)))
-			vizinhos = adj
-			for vertice in vizinhos:
-				ultimo = vertice
-				if vertice not in visitados and vertice not in vizinhos:
-					visitados.append(vertice)
-					vizinhos.append(vertice)
+			i = 0
+			for vizinho in vizinhos:
+				if vizinho not in visitados:
+					atual = vizinho
+					# print ('atual ' + str(atual))
+					break
+
+				else:
+					i += 1
+					# print ('i ' + str(i))
+
+			if i == len(vizinhos):
+				k = 0
+				for vertice in grafo:
+					# print ('VÉRTICE 0')
+					# print (vertice[0])
+					if vertice[0] in visitados:
+						k += 1
+						
+					else:
+						m = 1
+						while m < len(visitados):
+							vizinhos_fernando = verticesAdj(grafo, int(visitados[j-m]))
+							# print (vizinhos_fernando)
+							l = 0
+							find = False
+							for vizinho_fernando in vizinhos_fernando:
+								print (vizinho_fernando)
+								if vizinho_fernando not in visitados:
+									atual = visitados[j-m]
+									print (atual)
+									print ('ATUEL')
+									# m += 1
+									print ('ENTROU GOSTOSINHO')
+									find = True
+									break
+
+								else:
+									l += 1
+
+							if l == len(vizinhos_fernando):
+								print ('SAIU GOSTOSINHO')
+								m += 1
+
+							if find:
+								break
+
+				if len(grafo) == k:
+					vizinhos = []
+					resultado = visitados
+
+			print ('VISITADOS BUSCA EM profundidade')
+			print (visitados)
+
+			visitados.append(int(atual))
+			j += 1
 
 		except:
-			print ('--'*30)
+			print ('--'*45)
+			print ('TRAVOU')
 			break
+
+	return resultado
 
 
 # ###########################################################################################################
@@ -104,8 +205,9 @@ menu['4'] = 'Vertices Adjacentes'
 menu['5'] = 'Existe Aresta Entre'
 menu['6'] = 'Grau do Vertice'
 menu['7'] = 'Busca em Largura'
-menu['8'] = 'Busca em Profundidade'
-menu['9'] = 'Sair'
+menu['8'] = 'Samuel'
+menu['9'] = 'Alvaro'
+menu['10'] = 'Sair'
 grafo = []
 
 while True: 
@@ -147,9 +249,17 @@ while True:
 
 	elif selection == '8':
 		atual = input('Digite o vertice inicial: ')
-		buscaProfundidade(grafo, atual)
+		atual = int(atual)
+		print ('ASSALABASSURIAS')
+		print (samuel(grafo, atual))
+		print ('CANTARAI')
 
 	elif selection == '9':
+		atual = input('Digite o vertice inicial: ')
+		# atual = int(atual)
+		alvaro(grafo, atual)
+
+	elif selection == '10':
 		break
 
 	else:
