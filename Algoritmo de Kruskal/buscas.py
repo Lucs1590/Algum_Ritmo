@@ -72,30 +72,68 @@ def buscaLargura(atual):
 
 
 def buscaProfundidade(grafo, atual):
-	print ('\n')
-
 	visitados = []
-	ultimo = atual
 	vizinhos = [atual]
+	j = 0
 
-	while vizinhos != '[]':
+	visitados.append(int(atual))
+
+	while vizinhos != []:
 		try:
-			visitados.append(int(vizinhos[0]))
+			vizinhos = verticesAdj(grafo, int(visitados[j]))
 
-			adj = verticesAdj(grafo, int(vizinhos.pop(0)))
-			vizinhos = adj
-			for vertice in vizinhos:
-				ultimo = vertice
-				if vertice not in visitados and vertice not in vizinhos:
-					visitados.append(vertice)
-					vizinhos.append(vertice)
+			i = 0
+			for vizinho in vizinhos:
+				if vizinho not in visitados:
+					atual = vizinho
+					break
+
+				else:
+					i += 1
+
+			if i == len(vizinhos):
+				k = 0
+				for vertice in grafo:
+					if vertice[0] in visitados:
+						k += 1
+						
+					else:
+						m = 1
+						while m < len(visitados):
+							vizinhos_fernando = verticesAdj(grafo, int(visitados[j-m]))
+
+							l = 0
+							find = False
+							for vizinho_fernando in vizinhos_fernando:
+								if vizinho_fernando not in visitados:
+									atual = visitados[j-m]
+									find = True
+									break
+
+								else:
+									l += 1
+
+							if l == len(vizinhos_fernando):
+								m += 1
+
+							if find:
+								break
+
+				if len(grafo) == k:
+					vizinhos = []
+					resultado = visitados
+
+			visitados.append(int(atual))
+			j += 1
 
 		except:
-			print ('--'*30)
+			print ('--'*45)
+			print ('TRAVOU')
 			break
 
+	return resultado
 
-# ###########################################################################################################
+
 menu = {}
 menu['1'] = 'Criar Lista' 
 menu['2'] = 'Insere Aresta'
@@ -104,7 +142,7 @@ menu['4'] = 'Vertices Adjacentes'
 menu['5'] = 'Existe Aresta Entre'
 menu['6'] = 'Grau do Vertice'
 menu['7'] = 'Busca em Largura'
-menu['8'] = 'Busca em Profundidade'
+menu['8'] = 'Samuel'
 menu['9'] = 'Sair'
 grafo = []
 
@@ -114,7 +152,7 @@ while True:
 	print ('\n')
 	for entry in options_order:
 		print (entry, menu[entry])
-	selection = input('Selecione a opção:')
+	selection = input('Selecione a opção: ')
 	print ('\n')
 	if selection == '1':
 		grafo = geraLista()
@@ -147,7 +185,11 @@ while True:
 
 	elif selection == '8':
 		atual = input('Digite o vertice inicial: ')
-		buscaProfundidade(grafo, atual)
+		atual = int(atual)
+		print ('\n' + '*'*35)
+		print ('CAMINHO PARA BUSCA EM PROFUNDIDADE')
+		print (buscaProfundidade(grafo, atual))
+		print ('*'*35)
 
 	elif selection == '9':
 		break
