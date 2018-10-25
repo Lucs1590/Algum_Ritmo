@@ -10,4 +10,4 @@ Esse repositório tem a finalidade de armazenar eA compartilhar todos os projeto
  2. [Aula 2](https://github.com/Lucs1590/Algum_Ritmo/commit/6c74ad77a73b1e36caee07a1b8c195b236bfa925) - Aula relacionada a criação de busca em largura;
  3. [Algoritmo de Kruskal](https://github.com/Lucs1590/Algum_Ritmo/tree/master/Algoritmo%20de%20Kruskal) - Esse foi um trabalho de desenvolvimento exigido com um tema especifico para cada grupo da sala;
  4. [Aula 4](https://github.com/Lucs1590/Algum_Ritmo/tree/master/Recursividade) - Aula relacionada a criação de funções que utilizam tecnica de recursividade;
- 5. [Aula 5]() - Aula relacionada a criação de uma busca de caminho minimo;
+ 5. [Aula 5](https://github.com/Lucs1590/Algum_Ritmo/tree/master/Caminho%20Minimo) - Aula relacionada a criação de uma busca de caminho minimo;
