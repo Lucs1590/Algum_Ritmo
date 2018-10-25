@@ -2,7 +2,7 @@
 
 **Desenvolvido por:** Lucas de Brito Silva
 
-Esse repositório tem a finalidade de armazenar e compartilhar todos os projetos relacionados à matéria de algoritmos avançados desenvolvidos por Lucas de Brito Silva (no caso, eu mesmo), para contribuir para a aula de algoritmos avançados ministrada pelo professor Victor Borba.
+Esse repositório tem a finalidade de armazenar eA compartilhar todos os projetos relacionados à matéria de algoritmos avançados desenvolvidos por Lucas de Brito Silva (no caso, eu mesmo), para contribuir para a aula de algoritmos avançados ministrada pelo professor Victor Borba.
 
 ## Índice
 
